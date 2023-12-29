@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>적정 체중구하기 02</title>
+    <script type="text/javascript">
+        const name = prompt("이름을 입력하세요.","");
+        const height = parseInt(prompt("키를 입력하세요.", "0"));
+        const weight = parseInt(prompt("체중을 입력하세요.", "0"));
+
+        const normalW = (height - 100) * 0.9;
+        let result = weight >= normalW - 5 && weight <= normalW + 5;
+        let minusW = weight - normalW;
+        result = result ? "당신은 적정 체중입니다." : "당신은 적정 체중이 아닙니다.";
+        document.write("이름 : " + name + "<br />");
+        document.write("키 : " + height + "cm" + "<br />");
+        document.write("체중 : " + weight + "kg" + "<br />");
+        document.write("적정 체중 : " + normalW + "kg" + "<br />");
+        document.write(result);
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+
+<!-- 
+    문제 데이터를 숫자 데이터로 변경하는 메소드 Number와 parseInt 차이점
+    Number -> 수숫점 이하 17 자리까지, 논리 값 true,false를 숫자로 받을 수 있음
+    ex) Number(true) -> 1
+    + &&나 ||로 할 수 없는 3개 중 2개 값이 충족되면 가능하다 식으로 되어 있는 조건을
+    Number로 true, false 값을 받아서 각각의 조건을 걸어서 할 수 있게 해줌.
+    parseInt -> 정수형 표현, 기본적으로 10진법 이지만, 다른 진법으로도 표현 가능
+    ex) parseInt('11') -> 11 (10진법)
+        parseInt('11',2) -> 3 (10진법 숫자)
+
+
+ -->

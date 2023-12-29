@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>돈관리</title>
+    <script type="text/javascript">
+    const price1 = parseInt(prompt("교통비로 얼마를 사용했나요?", "0"));
+    const price2 = parseInt(prompt("식비로 얼마를 사용했나요?", "0"));
+    const price3 = parseInt(prompt("음료비로 얼마를 사용했나요?", "0"));
+
+    const allPrice = (price1 + price2 + price3);
+    const result = allPrice < 10000 ? "돈 관리를 잘 했어요!" : (allPrice - 10000) + "원 초과했군요. 절약합시다!";
+    document.write("교통비 :" + price1 + "원" + "<br />");
+    document.write("식비 :" + price2 + "원" + "<br />");
+    document.write("음료비 : " + price3 + "원" + "<br />");
+    document.write("총 지출비 : " + allPrice + "원" + "<br />")
+    document.write(result);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

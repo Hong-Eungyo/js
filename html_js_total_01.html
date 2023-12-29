@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>적정 체중 구하기01</title>
+    <script type="text/javascript"> 
+        const userHeight = 180;
+        const userWeight = 74;
+
+        const normalW = (userHeight - 100) * 0.9;
+        const minusW = (userWeight - normalW);
+        const result = userWeight < normalW ? "당신은 적정 체중입니다." : "적정 체중에서 "+ minusW + "kg 초과했습니다.";
+
+        document.write("본인의 키 : " + userHeight + "cm" + "<br />");
+        document.write("본인의 몸무게 : " + userWeight + "kg" + "<br />");
+        document.write("적정 몸무게 : " + normalW + "kg" + "<br />");
+        document.write(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

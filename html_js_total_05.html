@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>분기 매출</title>
+    <script type="text/javascript">
+        const price1 = parseInt(prompt("1분기 판매량을 입력하시오.","0"));
+        const price2 = parseInt(prompt("2분기 판매량을 입력하시오.","0"));
+        const price3 = parseInt(prompt("3분기 판매량을 입력하시오.","0"));
+        const average = (price1 + price2 + price3) / 3;
+        const price4 = parseInt(prompt("4분기 판매량을 입력하시오",""));
+        const result = price4 >= average ? "4분기는 평균 판매량 이상입니다" : "4분기는 평균 판매량 미달입니다";
+        
+        document.write("1분기 판매량 : " + price1 + "원" + "<br />");
+        document.write("2분기 판매량 : " + price2 + "원" + "<br />");
+        document.write("3분기 판매량 : " + price3 + "원" + "<br />");
+        document.write("4분기 판매량 : " + price4 + "원" + "<br />");
+        document.write("평균 판매량 : " + average + "원" + "<br />");
+        document.write(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
