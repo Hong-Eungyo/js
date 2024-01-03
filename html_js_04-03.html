@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>남은 시간 구하기</title>
+    <script type="text/javascript">
+        const today = new Date();
+        const nowYear = today.getFullYear();
+
+        const theDate = new Date(nowYear, 11, 25);
+        const diffDate = theDate.getTime() - today.getTime();
+
+        const result = Math.ceil(diffDate / (60 * 1000 * 60 * 24));
+        //Math.ceil(숫자) - 소수점 1째 자리에서 무조건 올림하여 정수로 반환하는 메소드 입니다.
+        document.write("<h1> 오늘부터 올해 크리스마스까지 남은 날짜 </h1>");
+        document.write("D-day: "+ result + "일 남았습니다.");
+
+        const theDate2 = new Date(nowYear, 3, 19);
+        const diffDate2 = theDate2.getTime() - today.getTime();
+        const result2 = Math.ceil(diffDate2 / (60 * 1000 * 60 * 24));
+        document.write("<h1> 오늘부터 생일까지 남은 날짜 </h1>");
+        document.write("D-day: " + result2 + "일 남았습니다.");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

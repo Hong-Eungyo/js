@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택문 - switch문</title>
+    <script type="text/javascript">
+        const site = prompt("네이버, 다음, 네이트, 구글 중 즐겨 사용하는 포털 검색 사이트는?" ,"");
+        let url;
+        switch(site) {
+            case "구글": url = "www.google.com";
+            location.href= "http://" + url;
+            break;
+
+            case "다음": url = "www.daum.net";
+            location.href= "http://" + url;
+            break;
+
+            case "네이버": url = "www.naver.com";
+            location.href= "http://" + url;
+            break;
+
+            case "네이트": url = "www.nate.com";
+            location.href= "http://" + url;
+            break;
+
+            default: alert("보기 중에 없는 사이트입니다.");
+            //모두 불만족 할때는 defalut값을 실행하고 종료
+        }
+    </script>
+</head>
+<body>
+
+    
+</body>
+</html>

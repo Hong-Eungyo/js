@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        const count = parseInt(prompt("점수를 입력해주세요","0"));
+        const count2 = parseInt(prompt("당신의 주민번호 뒷번호 1번째 숫자를 입력하세요.","0"));
+        if (count >= 90) {
+            if(count2 == 2 || count2 == 4) {
+                document.write("합격 - 당신은 90점 이상이고 여성입니다.");
+            } else {
+                alert("90점 이상이지만, 당신은 여성이 아닙니다.");
+                location.reload();
+            }
+        } else {
+            alert("점수가 90점 미만입니다.");
+            location.reload();
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

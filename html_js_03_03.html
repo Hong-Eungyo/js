@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이디와 비밀번호 일치</title>
+    <script type="text/javascript">
+        const id = "tree";
+        const pw = "1234";
+        let user_id = prompt("아이디는?","");
+        let user_pw = prompt("비밀번호는?","");
+
+        if(id == user_id) {
+            if(pw == user_pw) {
+                document.write(user_id + " 님 반갑습니다.");
+            } else {
+                alert("비밀번화가 일치하지 않습니다.");
+                location.reload();
+            }
+        } else {
+            alert("아이디가 일치하지 않습니다.");
+            location.reload();
+        }
+
+        /*      
+                alert("메세지 내용") -> 경고창 만들기
+                location.reload();
+                -> 현재 웹 화면(문서)를 새로고침 해줌
+                -> 페이지를 나갈때는 location.reload();를 삭제합니다.
+
+                location.replace("http://www.naver.com");
+                기존 페이지를 새로운 페이지로 변경
+                형태 : 메소드
+                주소 히스토리 : 기록 x
+
+                location.href="http://naver.com";
+                새로운 페이지로 이동
+                형태 : 속성
+                주소 히스토리 : 기록
+                */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+
