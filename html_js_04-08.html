@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 메소드 실습 2</title>
+    <script>
+        let fruitArr = ["grape","apple","orange"];
+        let vegArr = ["carrot","parsley","red pepper"];
+        fruitArr.splice(2,1,"kiwi","mango");
+        console.log(fruitArr); 
+        /*
+        fruitArr 배열의 인덱스 버호 2번 (index: 2 -> orange)
+        데이터에서 1개의 데이터를 삭제합니다.
+        그런다음 "kiwi","mango" 데이터를 삽입
+        */
+       console.log(vegArr);
+       let data1 = vegArr.pop(); //vegArr 배열 마지막 인덱스의 데이터(red pepper)를 data1에 저장
+       console.log(vegArr);
+       let data2 = vegArr.shift(); //vegArr 배열 1번째 인데스의 데이터(carrot)를 data2에 저장
+       console.log(data2);
+       vegArr.push(data2); //vegArr 배열 마지막에 data2(carrot)를 삽입
+       console.log(vegArr);
+       vegArr.unshift(data1);
+       //vegArr 배열 가장 왼쪽에 data1(red pepper)를 삽입
+       console.log(vegArr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

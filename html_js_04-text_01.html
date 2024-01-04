@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text 배열 십습</title>
+    <script>
+        const tt = "web he she he";
+
+        const text_01 = tt.charAt(2); //문자열에서 인데스 번호에 해당하는 문자 반환, 없으면 -1반환
+        const text_02 = tt.indexOf("he"); 
+        //문자열에서 왼쪽부터 찾을 문자와 일치하는 문자를 찾아 제일 먼저 일치하는 문자의 인덱스 번호 반환
+        const text_02_01 = tt.indexOf("she");
+        const text_02_01_02 = tt.indexOf("she",5);
+        //indexOf는 시작위치 지정 가능
+        const text_03 = tt.lastIndexOf("he");
+        //문자열에서 오른쪽부터  찾을 문자와 일치하는 문자를 찾아 제일 먼저 일치하는 문자의 인덱스 번호 반환, 없으면 -1반환
+        const text_04 = tt.match("boy");
+        //문자열에서 왼쪽부터 찾을 문자와 일치하는 문자를 찾아 제일 먼저 찾은 문자를 반환, 없으면 null반환
+        const text_04_01 = tt.match("she");
+        const text_05 = tt.replace("web", "html");
+        //replace("바꿀문자","새문자")
+        //문자열에서 왼쪽부터 바꿀 문자와 일치하는 문자를 찾아 제일 먼저 일치하는 문자를 새 문자로 바꿈
+        const text_06 = tt.search("he");
+        //indexOf와 같이 문자열에서 왼쪽부터 찾을 문자와 일치하는 문자를 찾아 제일 먼저 일치하는 인덱스 번호 반환
+        //시작번호 지정 x
+
+        document.write(text_01 + "<br>"); 
+        document.write(text_02 + "<br>"); 
+        document.write(text_02_01 + "<br>"); 
+        document.write(text_02_01_02 + "<br>"); 
+        document.write(text_03 + "<br>"); 
+        document.write(text_04 + "<br>"); 
+        document.write(text_04_01 + "<br>"); 
+        document.write(text_05 + "<br>"); 
+        document.write(text_06 + "<br>"); 
+
+
+        const ss = "hello javascript";
+
+        const text_07 = ss.slice(3, 7);
+        document.write(text_07 + "<br>");
+        console.log(text_07);
+        /*slice(a,b) : a번째 인덱스번호 이전 (-1)까지 문자를 자르고 
+        남은 글자에서 b번째 인덱스 번호부터 나머지를 자르기하고 남은 문자 반환
+        */
+       const text_08 = ss.substring(7,9);
+       document.write(text_08 + "<br>");
+       console.log(text_08);
+       /*
+       substring(a,b) : a인데스번호부터 b인덱스 이전 구간(-1)의 문자를 반환
+       */
+
+       const text_09 = ss.substr(3,2);
+       document.write(text_09 + "<br>");
+       console.log(text_09);
+        /*
+        substr(a, 문자개수): a 인덱스부터 지정한 문자 개수만큼 문자를 반환
+        */
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
