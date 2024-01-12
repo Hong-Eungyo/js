@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경 이미지 클리하면 배경이미지 변경</title>
+    <style>
+        * {margin: 0; padding: 0;}
+
+        .container {
+            width: 1200px;
+            height: 900px;
+            background: url(img/img_slide_01.jpg) no-repeat;
+            background-size: cover;
+            margin: 0 auto;
+        }
+
+        .container.slide01 {
+            background: url(img/img_slide_02.jpg) no-repeat;
+            background-size: cover;
+        }
+        .container.slide02 {
+            background: url(img/img_slide_03.jpg) no-repeat;
+            background-size: cover;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">&nbsp;</div>
+    
+    <script>
+        const slideBg = document.querySelector('.container');
+
+        let position = 0;
+        function slideImg () {
+            position++;
+            if (position % 3 == 0) {
+                slideBg.classList.remove('slide01');
+                slideBg.classList.remove('slide02');
+            } else if(position % 3 == 1) {
+                slideBg.classList.add('slide01');
+                slideBg.classList.remove('slide02');
+            } else {
+                slideBg.classList.remove('slide01');
+                slideBg.classList.add('slide02');
+            }
+        }
+
+        slideBg.addEventListener('click', slideImg);
+    </script>
+</body>
+</html>

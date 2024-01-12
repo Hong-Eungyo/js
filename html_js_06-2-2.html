@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이디, 비밀번호를 입력하고 인증확인하는 코딩</title>
+    <script>
+        const rightId = "hello";
+        const rightPw = "12345";
+
+        function logIn(id, pw) {
+            if(id == rightId) {
+                if(pw == rightPw) {
+                    document.write(id + "님 환영합니다.");
+                } else {
+                    alert("잘못된 비밀번호 입니다.");
+                }
+            } else {
+                alert("존재하지 않는 아이디입니다.");
+            }
+        }
+
+        const userId = prompt("아이디를 입력해주세요.","");
+        const userPw = prompt("비밀번호를 입력해주세요.","");
+
+        logIn(userId, userPw);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

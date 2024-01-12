@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="aaa"> 안녕하세요 </div>
+    <div id="bbb"> 반갑습니다 </div>
+    <div> 상쾌한 아침 </div>
+    <div> 비오는 밤 </div>
+    <br><br><br>
+
+    <script>
+        const kk = document.querySelectorAll('div');
+
+        for(let i =0; i < kk.length; i++) {
+            console.log(kk[i].innerText);
+            document.write(kk[i].innerText,"<br>");
+        }
+
+        box = ['사과','바나나','오렌지'];
+        for(let a =0; a < box.length; a++) {
+            document.write(box[a],"<br>");
+            console.log(box[a]);
+        }
+
+    </script>
+</body>
+</html>

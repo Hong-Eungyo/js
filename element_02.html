@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySelector 실습</title>
+    <style>
+        div { font-size: 20pt;}
+    </style>
+</head>
+<body>
+    <div class="aaa"> 안녕하세요 </div>
+    <div id="bbb"> 반갑습니다 </div>
+    <div> 상쾌한 아침입니다 </div>
+
+    <script>
+        document.querySelector('.aaa').style.color = 'red';
+        document.querySelector('#bbb').style.background = '#f90';
+        document.querySelector('div').style.background = 'rgb(100,100,100)';
+    </script>
+    
+</body>
+</html>

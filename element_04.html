@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addEventListener 실습</title>
+    <style>
+        div {font-size: 20pt;}
+
+        .box_01 {
+            width: 300px;
+            height: 100px;
+        }
+
+        .box_01.change {
+            background: skyblue;
+            color: aliceblue;
+        }
+
+        .test_box_01 {
+            width: 150px;
+            height: 150px;
+            background: orange; 
+        }
+    </style>
+</head>
+<body>
+    <div class="box_01">
+        이쪽이 변합니다.
+    </div>
+    <br><br>
+    <button>클릭</button>
+    <br> <br>
+    <div class="test_box_01">
+        hello!
+    </div>
+
+    <script>
+        const kk = document.querySelector('.box_01');
+        const box = document.querySelector('.test_box_01');
+
+        document.querySelector('button').addEventListener('click',function() {
+           kk.classList.toggle('change');
+        })
+
+        box.addEventListener('mouseover', () =>{
+            box.innerHTML = 'mouse is over! hello!';
+            box.style.backgroundColor = "oldlace";
+        })
+        box.addEventListener('mouseout', () =>{
+            box.innerHTML = 'mouse is out! bye!';
+            box.style.backgroundColor = "greenyellow";
+        })
+        box.addEventListener('click',()=> {
+            box.innerHTML = 'box is clicked!';
+            box.style.backgroundColor = 'tomato';
+        })
+        
+    </script>
+</body>
+</html>

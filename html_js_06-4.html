@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이전, 다음 버튼을 이용하여 이미지 변경하는 코딩</title>
+    <script>
+        let num = 1;
+        function gallery(direct) {
+            if(direct) {
+                if(num == 8) return;
+                num++;
+            } else {
+                if(num == 1) return;
+                num--;
+            }
+            const imgTag = document.getElementById('photo');
+            imgTag.setAttribute("src","img/pic_" + num + ".jpg");
+        }
+    </script>
+</head>
+<body>
+    <div id="galleryZone">
+        <p><img src="img/pic_1.jpg" id ="photo"alt=""></p>
+        <p>
+            <button onclick="gallery(0)">이전</button>
+            <button onclick="gallery(1)">다음</button>
+        </p>
+    </div>
+</body>
+</html>

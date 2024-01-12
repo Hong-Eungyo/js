@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>노래 이름 맞추기</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .img-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .img-box > img {
+            width: 300px;
+            padding: 1.5rem 0;
+        }
+        .puzzle-title {
+            text-align :center;
+        }
+    
+        input {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            border-color: darkred;
+            background: #fff;
+            font-size: 40px;
+            text-align: center;
+            line-height: 50px;
+        }
+        .space {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+        }
+        button {
+            width: 100px;
+            height: 40px;
+            background: darkred;
+            border: 1px solid transparent;
+            border-radius: 10px;
+            color: aliceblue;
+        }
+        button:hover {
+            background: rgb(172, 0, 0);
+        }
+        .color { 
+            display: flex;
+            gap: 10px;
+            padding: 1.5rem 0;
+        }
+        .color-info {
+            display: flex;
+            gap: 10px;
+        }
+        .circle {
+            width:  20px;
+            height: 20px;
+            border-radius: 100%;
+        }
+
+        .color1 {background-color: #F2B680;}
+        .color2 {background-color: #732002;}
+        .color3 {background-color: #B4F257;}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="img-box">
+            <h1 class="puzzle-title">해당 커버의 노래 이름은?</h1>
+            <img src="https://i.namu.wiki/i/7Rl3b3w6JodPtLitLWmt1skV-WyHcq1xQD3u3OpypcduP_hvHh6InGpCqJShFwFWnAzPRBoq1R50UZJCMHGYfQ.webp" alt="해당 노래의 이름을 맞추시오">
+        </div>
+        <div class="input-box">
+            <input type="text" class="text">
+            <input type="text" class="text">
+            <input type="text" class="text">
+            <input type="text" class="text">
+            <input type="text" class="text">
+            <div class="space"></div>
+            <input type="text" class="text">
+            <input type="text" class="text">
+            <input type="text" class="text">
+            <input type="text" class="text">
+        </div>
+        <br>
+        <button>제출</button>
+        <div class="color">
+            <div class="color-info"><span>일치할 때 : </span><div class="circle color1">&nbsp;</div></div>
+            <div class="color-info"><span>자리만 불일치 할 때 : </span><div class="circle color2">&nbsp;</div></div>
+            <div class="color-info"><span>불일치 할 때 : </span><div class="circle color3">&nbsp;</div></div>
+        </div>
+    </div>
+
+
+    <script>
+        const answer = 'chillkill';
+        const inputs = document.querySelectorAll('.text');
+        const btn = document.querySelector('button');
+        
+        btn.addEventListener('click', ()=> {
+            for(let i = 0; i < answer.length; i++) {
+                if(answer[i] == inputs[i].value) {
+                    inputs[i].style.background = '#F2B680';
+                    inputs[i].style.color = '#f1f1f1';
+                } else if(answer.includes(inputs[i].value)) {
+                    inputs[i].style.background = '#732002';
+                    inputs[i].style.color = '#f1f1f1';
+                } else {
+                    inputs[i].style.background = '#B4F257';
+                     inputs[i].style.color = '#f1f1f1';
+                }
+            }
+        })
+
+
+    </script>
+</body>
+</html>

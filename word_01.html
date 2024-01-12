@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단어 퍼즐</title>
+    <style>
+        input {
+            width: 50px;
+            height: 50px;
+            font-size: 40px;
+            text-align: center;
+            border-radius: 5px;
+            border-color: crimson;
+            font-size: 40px;
+            text-align: center;
+        }
+        button {
+            width: 100px;
+            height: 40px;
+            border: 0px solid;
+            background: crimson;
+            border-radius: 10px;;
+            color: #f1f1f1;
+        }
+        button:hover {
+            background: rgb(241, 28, 71);
+            color: beige;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" class="text_each">
+    <input type="text" class="text_each">
+    <input type="text" class="text_each">
+    <input type="text" class="text_each">
+    <input type="text" class="text_each">
+    <br>
+    <br>
+    <button> 제출 </button>
+
+
+    <script>
+        const answer = 'korea';
+
+        document.querySelector('button').addEventListener('click', ()=> {
+            const box = document.querySelectorAll('.text_each');
+            for (let i=0; i < answer.length; i++) {
+                if(answer[i] == box[i].value) {
+                    box[i].style.background = '#0ff';
+                } else if (answer.includes(box[i].value)){
+                    box[i].style.background = "#ff0";
+                } else {
+                    box[i].style.background = "#ddd";
+                }
+            }
+        
+        })
+       
+        
+    </script>
+</body>
+</html>

@@ -10,23 +10,26 @@
 
         let check1 = false;
         let check2 = false;
-
+        
+        // @ 가 있는지 없는지 검사
         if(userEmail.indexOf("@") > 0) {
             check1 = true;
         }
-
+  
+        //arrUrl에 있는 요소들이 있는지 없는지 검사
         for(let i=0; i < arrUrl.length; i++) {
             if(userEmail.indexOf(arrUrl[i]) > 0) {
                 check2 = true;
             }
         }
-
-        if (check1 && check2) {
+ 
+        //  조건 두개 다 만족했을 시
+        if(check1 && check2) {
             document.write(userEmail);
         } else {
-            alert("이메일 형식이 잘못되었습니다.");
-            location.reload();
+            alert("잘못된 이메일 형식입니다.");
         }
+   
     </script>
 </head>
 <body>

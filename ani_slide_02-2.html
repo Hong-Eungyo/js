@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 메뉴 innerText 사용</title>
+    <style>
+        * { margin: 0; padding: 0;}
+        .container {
+            position: relative;
+            clear: both;
+            width: 1200px;
+            height: 650px;
+            background: url(img/slide_menu_img_02.jpg) no-repeat;
+            background-size: cover;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .box_01 {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1200px;
+            height: 650px;
+            text-align: left;
+        }
+        .box_02 {
+            position: absolute;
+            right: -100px;
+            top: 0;
+            transition: all 1s;
+        }
+        .box_02.open {
+            right: 0;
+            transition: all 1s;
+        }
+        .quick_menu {
+            display: flex;
+            width: 150px;
+            height: 650px;
+        }
+        .left-menu {
+            width: 50px;
+            height: 650px;
+            line-height: 650px;
+            background: rgba(192, 192, 192, 0.5);
+            text-align: center;
+            transition: all 0.5s;
+        }
+        .left-menu:hover {
+            background: rgba(192, 192, 192, 0.8);
+            transition: all 0.5s;
+        }
+        .right-menu {
+            width: 100px;
+            height: 650px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: #dddddd55;
+        }
+
+        .menu {
+            width: 100px;
+            height: 50px;
+            background: #0d0d0d88;
+            text-align: center;
+            line-height: 50px; 
+            color: #f1f1f1;
+            transition: all 0.5s;
+        }
+        .menu:hover {
+            background: #0d0d0d;
+            transition: all 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box_01" id="main_content">전체화면</div>
+        <div class="box_02" id="side_menu">
+            <div class="quick_menu">
+                <div class="left-menu" id="clickBtn">
+                    ◀
+                </div>
+                <div class="right-menu">
+                    <div class="menu">menu01</div>
+                    <div class="menu">menu02</div>
+                    <div class="menu">menu03</div>
+                    <div class="menu">menu04</div>
+                    <div class="menu">menu05</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const mainCon = document.querySelector('#main_content'),
+        sideMenu = document.querySelector('#side_menu'),
+        clickBtn = document.querySelector('#clickBtn');
+        let position = 0;
+        function slideMenu () {
+            position++;
+            if(position % 2 == 1) {
+                clickBtn.innerText = "▶";
+                sideMenu.classList.add('open');
+            } else {
+                clickBtn.innerText = "◀";
+                sideMenu.classList.remove('open');
+            }
+        }
+
+        clickBtn.addEventListener('click',slideMenu);
+        mainCon.addEventListener('click',slideMenu);
+
+    </script>
+</body>
+</html>

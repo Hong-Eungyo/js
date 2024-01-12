@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 메뉴1</title>
+    <style>
+        * {margin: 0; padding: 0;}
+
+        .wrap {
+            position: relative;
+            clear: both;
+            width: 1200px;
+            height: 800px;
+            background: url(img/slide_menu_img_01.jpg) no-repeat;
+            background-size: cover;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .content_01 {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 1200px;
+            height: 800px;
+        }
+        .quick_01 {
+            position: absolute;
+            left: 1150px;
+            top: 0px;
+            width: 200px;
+            height: 800px;
+            text-align: left;
+            transition: all 1s;
+            z-index: 2;
+        }
+        .quick_01.open {
+            left: 1000px;
+        }
+        #quick_left {
+            position: relative;
+            float: left;
+            width: 50px;
+            height: 800px;
+            line-height: 800px;
+            text-align: center;
+            font-size: 20pt;
+            font-weight: bold;
+            background: rgb(255, 255, 255, 0.5);
+        }
+        #quick_right {
+            position: relative;
+            float: left;
+            width: 150px;
+            height: 800px;
+            padding-top: 150px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        #quick_right_01, #quick_right_02, #quick_right_03, #quick_right_04, #quick_right_05 {
+            position: relative;
+            clear: both;
+            width: 150px;
+            height: 100px;
+            line-height: 100px;
+            border: 1px solid #fff;
+            background: rgba(141, 64, 13, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <section class="wrap">
+        <div class="content_01" id="box_01">전체화면</div>
+        <div class="quick_01" id="box_02">
+            <div id="quick_left">
+                ▶
+            </div>
+
+            <div id="quick_right">
+                <div id="quick_right_01"> 로그인 </div>
+                <div id="quick_right_02"> 장바구니 </div>
+                <div id="quick_right_03"> My Page </div>
+                <div id="quick_right_04"> SNS </div>
+                <div id="quick_right_05"> 문의하기 </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        let position = 0;
+        const con_box_01 = document.getElementById("box_01"),
+              con_box_02 = document.getElementById("box_02");
+
+        function quick_slide() {
+            position++;
+            if(position % 2 == 1) {
+                con_box_02.classList.add('open');
+            } else {
+                con_box_02.classList.remove('open');
+            }
+        }
+
+        con_box_01.addEventListener('click',quick_slide);
+        con_box_02.addEventListener('click',quick_slide);
+    </script>
+</body>
+</html>

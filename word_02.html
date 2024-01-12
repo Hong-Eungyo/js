@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>노래 이름 맞추기</title>
+    <style tyle="text/css">
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        input {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 10px;
+            border: 1px solid #D98BA7;
+            font-size: 20px;
+        }
+        .blank {
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+        }
+
+        button {
+            width: 120px;
+            height: 40px;
+            border-radius: 10px;
+            border: 1px solid transparent;
+            color: #f1f1f1;
+            background: #BF1B68;
+            transition: all 0.5s;
+        }
+
+        button:hover {
+            background: #df247b;
+            transition: all 0.5s;
+        }
+
+        .img-box > img {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="con_title">해당 커버의 노래 이름은?</h1>  
+        <div class="img-box">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/44/Single_Ladies_%28Put_a_Ring_on_It%29_cover.png/220px-Single_Ladies_%28Put_a_Ring_on_It%29_cover.png" alt="해당 커버의 이름을 맞추시오">
+        </div>
+            <div class="inputs">
+                <input class="answer-input" type="text">
+                <input class="answer-input" type="text">
+                <input class="answer-input" type="text">
+                <input class="answer-input" type="text">
+                <input class="answer-input" type="text">
+                <input class="answer-input" type="text">
+                <div class="blank"></div>
+                <input class="answer-input" type="text">
+                <input class="answer-input" type="text">
+                <input class="answer-input" type="text">
+                <input class="answer-input" type="text">
+                <input class="answer-input" type="text">
+                <input class="answer-input" type="text">
+                
+            </div>
+            <br>
+            <button>제출</button>
+    </div>
+
+    <script>
+        const input = document.querySelectorAll('.answer-input');
+        const btn = document.querySelector('button');
+        const answer = 'singleladies';
+        console.log(answer.length);
+        
+        btn.addEventListener('click', ()=> {
+            for (let i = 0; i < answer.length; i++){
+                if (input[i].value.toLowerCase() == answer[i]) {
+                    input[i].style.background = "#D98BA7";
+                } else if (answer.indexOf(input[i].value.toLowerCase())) {
+                  input[i].style.background = "#BF1B68";
+                } else {
+                    input[i].style.background = "#585859";
+                }
+            }
+        })
+    </script>
+</body>
+</html>

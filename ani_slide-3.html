@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 퀵메뉴 toggle 방식 </title>
+    <style>
+        .container {
+            position: relative;
+            width: 1200px;
+            height: 900px;
+            overflow: hidden;
+        }
+        .container > img {
+            width: 1200px;
+        }
+        .menu-box {
+            position: absolute;
+            right: -100px;
+            top: 0;
+            display: flex;
+            transition: all 0.5s;
+            z-index: 2;
+        }
+        .menu-box.open {
+            right: 0;
+            top: 0;
+            transition: all 0.5s;
+        }
+        .click-btn {
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            background: #ddd;
+            text-align: center;
+            cursor: pointer;
+        }
+        .menu {
+            width: 98px;
+            height: 50px;
+            line-height: 50px;
+            background: rgba(255, 201, 102, 0.8);
+            border: 1px solid #f1f1f1;
+            text-align: center;
+        }
+        .menu:hover {
+            background: rgba(255, 201, 102, 1);
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="img/ani_slide_img.png" alt="ani_slide 이미지">
+        <div class="menu-box">
+            <div class="click-btn">클릭</div>
+            <div class="menu-container">
+                <div class="menu">상품</div>
+                <div class="menu">분류</div>
+                <div class="menu">Size</div>
+                <div class="menu">가격</div>
+                <div class="menu">수량</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const clickBtn = document.querySelector('.click-btn'),
+              menuBox = document.querySelector('.menu-box');
+
+        clickBtn.addEventListener('click', ()=> {
+            menuBox.classList.toggle('open');
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀵메뉴 % 연산자 사용</title>
+    <style>
+        .container {
+            position: relative;
+            width: 1200px;
+            height: 600px;
+            overflow: hidden;
+        }
+        .menu-container {
+            position: absolute;
+            right: -100px;
+            top: 0;
+            display: flex;
+            transition: all 0.5s;
+            z-index: 3;
+        }
+
+        .menu-container.open {
+            right: 0px;
+            transition: all 0.5s;
+        }
+
+        .click-btn {
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background: rgba(245, 245, 245, 0.8);
+            color: steelblue;
+            cursor: pointer;
+        }
+        .click-btn:hover {
+            background: rgba(245, 245, 245, 1);
+        }
+  
+        .menu {
+            display: block;
+            width: 98px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            text-decoration: none;
+            color: #f1f1f1;
+            background: rgba(70, 131, 180, 0.5);
+            border: 1px solid #f1f1f1;
+        }
+        .menu:hover {
+            background-color: rgba(70, 131, 180, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="img/quickmenu_img.jpg" alt="메인 이미지" width="1200">
+        <div class="menu-container">
+            <div class="click-btn">클릭</div>
+            <div class="side-menu">
+                <a href="#" class="menu">전체보기</a>
+                <a href="#" class="menu">카테고리별</a>
+                <a href="#" class="menu">신상품</a>
+                <a href="#" class="menu">이벤트</a>
+                <a href="#" class="menu">회사소개</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const clickBtn = document.querySelector('.click-btn'),
+              menuCon = document.querySelector('.menu-container');
+              
+        let position = 0;
+        
+        function quickMenu () {
+            position++;
+            if (position % 2 == 0) {
+                menuCon.classList.remove('open');
+            } else {
+                menuCon.classList.add('open');
+            }
+
+        }
+        clickBtn.addEventListener('click',quickMenu);
+
+    </script>
+</body>
+</html>
